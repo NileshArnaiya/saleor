@@ -213,7 +213,7 @@ export const ProductList: React.StatelessComponent<ProductListProps> = ({
                         onPreviousPage={loadPreviousPage}
                         pageInfo={pageInfo}
                         onRowClick={id => () => navigate(productUrl(id))}
-                        onAllProducts={() =>
+                        onAll={() =>
                           changeFilters({
                             status: undefined
                           })
@@ -254,6 +254,7 @@ export const ProductList: React.StatelessComponent<ProductListProps> = ({
                         onFilterDelete={() => openModal("delete-search")}
                         onTabChange={handleTabChange}
                         initialSearch={params.query || ""}
+                        filterTabs={getFilterTabs()}
                       />
                       <ActionDialog
                         open={params.action === "delete"}
