@@ -1,22 +1,15 @@
 import * as React from "react";
 
-import Debounce from "@saleor/components/Debounce";
-import {
-  FieldType,
-  FilterContentSubmitData,
-  IFilter
-} from "@saleor/components/Filter";
-import {
-  FilterChips,
-  FilterTab,
-  FilterTabs
-} from "@saleor/components/TableFilter";
+import { FieldType, IFilter } from "@saleor/components/Filter";
+import FilterBar from "@saleor/components/FilterBar";
 import i18n from "../../../i18n";
 import { FilterProps } from "../../../types";
 import { StockAvailability } from "../../../types/globalTypes";
 import { ProductListUrlFilters } from "../../urls";
 
-type ProductListFilterProps = FilterProps<ProductListUrlFilters>;
+interface ProductListFilterProps extends FilterProps<ProductListUrlFilters> {
+  currencySymbol: string;
+}
 
 export enum ProductFilterKeys {
   published,
